@@ -21,7 +21,9 @@ def get_parser(
     require_dryrun=False,
     require_rosdistro=False
 ):
-    parser = argparse.ArgumentParser(description=tool_tip)
+    parser = argparse.ArgumentParser(
+        description=tool_tip,
+        formatter_class=argparse.MetavarTypeHelpFormatter)
     if is_generator:
         parser.add_argument(
             '--ros-distro',
@@ -59,7 +61,9 @@ def get_parser(
         parser.add_argument(
             '--only',
             nargs='+',
-            help='generate only the specified packages'
+            help='generate only the specified packages',
+            type=str,
+            metavar='PKG'
         )
         parser.add_argument(
             '--pr-comment',
@@ -80,6 +84,8 @@ def get_parser(
         parser.add_argument(
             '--skip-keys',
             nargs='+',
-            help='packages to skip during regeneration'
+            help='packages to skip during regeneration',
+            metavar='SKIP_KEY',
+            type=str,
         )
     return parser

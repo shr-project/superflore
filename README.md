@@ -38,37 +38,31 @@ Gentoo Usage:
 ### Generating Gentoo Ebuilds
 ```
 $ superflore-gen-ebuilds -h
-usage: superflore-gen-ebuilds [-h] [--ros-distro ROS_DISTRO] [--all]
-                              [--dry-run] [--pr-only] [--no-branch]
-                              [--output-repository-path OUTPUT_REPOSITORY_PATH]
-                              [--only ONLY [ONLY ...]]
-                              [--pr-comment PR_COMMENT]
-                              [--upstream-repo UPSTREAM_REPO]
-                              [--upstream-branch UPSTREAM_BRANCH]
-                              [--skip-keys SKIP_KEYS [SKIP_KEYS ...]]
+usage: superflore-gen-ebuilds [-h] [--ros-distro str] [--all] [--dry-run]
+                              [--pr-only] [--no-branch]
+                              [--output-repository-path str]
+                              [--only PKG [PKG ...]] [--pr-comment str]
+                              [--upstream-repo str] [--upstream-branch str]
+                              [--skip-keys SKIP_KEY [SKIP_KEY ...]]
 
 Deploy ROS packages into Gentoo Linux
 
 optional arguments:
   -h, --help            show this help message and exit
-  --ros-distro ROS_DISTRO
-                        regenerate packages for the specified distro
+  --ros-distro str      regenerate packages for the specified distro
   --all                 regenerate all packages in all distros
   --dry-run             run without filing a PR to remote
   --pr-only             ONLY file a PR to remote
   --no-branch           Do not create a new branch automatically
-  --output-repository-path OUTPUT_REPOSITORY_PATH
+  --output-repository-path str
                         location of the Git repo
-  --only ONLY [ONLY ...]
-                        generate only the specified packages
-  --pr-comment PR_COMMENT
-                        comment to add to the PR
-  --upstream-repo UPSTREAM_REPO
-                        location of the upstream repository as in
+  --only PKG [PKG ...]  generate only the specified packages
+  --pr-comment str      comment to add to the PR
+  --upstream-repo str   location of the upstream repository as in
                         https://github.com/<owner>/<repository>
-  --upstream-branch UPSTREAM_BRANCH
+  --upstream-branch str
                         branch of the upstream repository
-  --skip-keys SKIP_KEYS [SKIP_KEYS ...]
+  --skip-keys SKIP_KEY [SKIP_KEY ...]
                         packages to skip during regeneration
 ```
 
@@ -148,39 +142,32 @@ should be followed to generate the OpenEmbedded recipes for `meta-ros`.
 
 ```
 $ superflore-gen-oe-recipes -h
-usage: superflore-gen-oe-recipes [-h] --ros-distro ROS_DISTRO --dry-run
-                                 [--pr-only] [--no-branch]
-                                 [--output-repository-path OUTPUT_REPOSITORY_PATH]
-                                 [--only ONLY [ONLY ...]]
-                                 [--pr-comment PR_COMMENT]
-                                 [--upstream-repo UPSTREAM_REPO]
-                                 [--upstream-branch UPSTREAM_BRANCH]
-                                 [--skip-keys SKIP_KEYS [SKIP_KEYS ...]]
-                                 [--tar-archive-dir TAR_ARCHIVE_DIR]
+usage: superflore-gen-oe-recipes [-h] --ros-distro str --dry-run [--pr-only]
+                                 [--no-branch] [--output-repository-path str]
+                                 [--only PKG [PKG ...]] [--pr-comment str]
+                                 [--upstream-repo str] [--upstream-branch str]
+                                 [--skip-keys SKIP_KEY [SKIP_KEY ...]]
+                                 [--tar-archive-dir str]
 
 Generate OpenEmbedded recipes for ROS packages
 
 optional arguments:
   -h, --help            show this help message and exit
-  --ros-distro ROS_DISTRO
-                        regenerate packages for the specified distro
+  --ros-distro str      regenerate packages for the specified distro
   --dry-run             run without filing a PR to remote
   --pr-only             ONLY file a PR to remote
   --no-branch           Do not create a new branch automatically
-  --output-repository-path OUTPUT_REPOSITORY_PATH
+  --output-repository-path str
                         location of the Git repo
-  --only ONLY [ONLY ...]
-                        generate only the specified packages
-  --pr-comment PR_COMMENT
-                        comment to add to the PR
-  --upstream-repo UPSTREAM_REPO
-                        location of the upstream repository as in
+  --only PKG [PKG ...]  generate only the specified packages
+  --pr-comment str      comment to add to the PR
+  --upstream-repo str   location of the upstream repository as in
                         https://github.com/<owner>/<repository>
-  --upstream-branch UPSTREAM_BRANCH
+  --upstream-branch str
                         branch of the upstream repository
-  --skip-keys SKIP_KEYS [SKIP_KEYS ...]
+  --skip-keys SKIP_KEY [SKIP_KEY ...]
                         packages to skip during regeneration
-  --tar-archive-dir TAR_ARCHIVE_DIR
+  --tar-archive-dir str
                         location to store archived packages
 ```
 
